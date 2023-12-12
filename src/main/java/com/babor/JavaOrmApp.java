@@ -9,6 +9,7 @@ public class JavaOrmApp {
     public static void main( String[] args ) {
         HibernateJpaStandardApiPersistenceXmlEntityManagerFactory entityManagerFactory =
                 new HibernateJpaStandardApiPersistenceXmlEntityManagerFactory();
-        entityManagerFactory.test();
+//        entityManagerFactory.test();
+        entityManagerFactory.test2();
     }
 }

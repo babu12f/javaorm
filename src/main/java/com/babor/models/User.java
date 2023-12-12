@@ -1,4 +1,4 @@
-package com.babor;
+package com.babor.models;
 
 import jakarta.persistence.*;
 

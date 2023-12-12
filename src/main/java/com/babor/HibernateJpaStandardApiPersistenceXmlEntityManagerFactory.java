@@ -1,5 +1,7 @@
 package com.babor;
 
+import com.babor.models.Account;
+import com.babor.models.User;
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -45,6 +47,23 @@ public class HibernateJpaStandardApiPersistenceXmlEntityManagerFactory {
             TypedQuery<User> query = em.createQuery(criteriaQuery);
             List<User> userList = query.getResultList();
             userList.forEach(System.out::println);
+        });
+    }
+
+    public void test2() {
+        inTransaction(entityManager -> {
+            Account account = new Account();
+            account.setId(1L);
+            account.setCredit(5000d);
+            account.setRate(1.25 / 100);
+            entityManager.persist(account);
+        });
+
+        inTransaction(entityManager -> {
+            Account account = entityManager.find(Account.class, 1L);
+            System.out.println(account.getCredit());
+            System.out.println(account.getRate());
+            System.out.println(account.getInterest());
         });
     }
 

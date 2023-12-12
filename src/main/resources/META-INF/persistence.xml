@@ -8,7 +8,7 @@
             Persistence unit for the Jakarta Persistence tutorial of the Hibernate Getting Started Guide
         </description>
 
-        <class>com.babor.User</class>
+        <class>com.babor.models.User</class>
 
         <properties>
             <!-- Database connection settings -->
